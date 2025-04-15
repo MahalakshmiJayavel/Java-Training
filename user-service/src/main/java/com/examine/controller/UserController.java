@@ -23,4 +23,10 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable ("id")Long id, @RequestBody User updatedUser) {
+        System.out.println("Print the id value: " + id);
+        return userService.updateUser(id, updatedUser);
+    }
 }
